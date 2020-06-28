@@ -76,6 +76,17 @@
 	<footer role="contentinfo">
 		 @yield('footer')
 		<p class="text-center"><small>Copyright &copy; Laravel</small></p>
+		<p class="text-left" style="position: absolute;margin-left: 20%;width: 17%;">
+			<span>Founder</span><br>
+			<span style="padding-left: 20px;">- Chiêm Tiền Khang</span><br>
+			<span style="padding-left: 20px;">- Hà Quán Quân</span>
+		</p>
+		<p class="text-right" style="margin-right: 20%;">
+			<span>Thông tin liên hệ</span><br>
+			<span>- SDT: <small>0938358256</small></span><br>
+			<span>- Email: <small>khang031222@gmail</small></span><br>
+			<span>- Address: <small>25 nguyễn trãi q.1</small></span>
+		</p>
 	</footer>
 		
 	{!! HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') !!}
