@@ -1,11 +1,14 @@
 <?php
 
-namespace DummyNamespace;
+namespace {{ namespace }};
 
-use DummyRootNamespaceJobs\Job;
+use Illuminate\Bus\Queueable;
+use Illuminate\Foundation\Bus\Dispatchable;
 
-class DummyClass extends Job
+class {{ class }}
 {
+    use Dispatchable, Queueable;
+
     /**
      * Create a new job instance.
      *

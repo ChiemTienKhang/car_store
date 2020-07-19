@@ -1,70 +1,79 @@
-## Laravel 5 example ##
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-For Laravel 5.3 improved version look at [this repository](https://github.com/bestmomo/laravel5-3-example).
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-**Laravel 5 example** is a tutorial application for Laravel 5.2 (in french [there](http://laravel.sillo.org/laravel-5/)).
+## About Laravel
 
-### Installation ###
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-* `git clone https://github.com/bestmomo/laravel5-example.git projectname`
-* `cd projectname`
-* `composer install`
-* `php artisan key:generate`
-* Create a database and inform *.env*
-* `php artisan migrate --seed` to create and populate tables
-* Inform *config/mail.php* for email sends
-* `php artisan vendor:publish` to publish filemanager
-* `php artisan serve` to start the app on http://localhost:8000/
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Another cool way to install it is to upload [this package](http://laravel.sillo.org/tuto/installable.zip), unpack it in your server folder, and just launch it and follow the installation windows. It has been created with my [laravel installer package](https://github.com/bestmomo/laravel-installer). Anyway you'll have to set the email configuration.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-### Nitrous Quickstart ###
+## Learning Laravel
 
-Create a free development environment for this Laravel 5 example project in the cloud on [Nitrous.io](https://www.nitrous.io) by clicking the button below.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-<a href="https://www.nitrous.io/quickstart">
-  <img src="https://nitrous-image-icons.s3.amazonaws.com/quickstart.png" alt="Nitrous Quickstart" width=142 height=34>
-</a>
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-In the IDE, start Laravel 5 Example via `Run > Start Laravel 5 Example` and access your site via `Preview > 8000`.
+## Laravel Sponsors
 
-### Include ###
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-* [HTML5 Boilerplate](http://html5boilerplate.com) for front architecture
-* [Bootstrap](http://getbootstrap.com) for CSS and jQuery plugins
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome) for the nice icons
-* [Highlight.js](https://highlightjs.org) for highlighting code
-* [Startbootstrap](http://startbootstrap.com) for the free templates
-* [CKEditor](http://ckeditor.com) the great editor
-* [Filemanager](https://github.com/simogeo/Filemanager) the easy file manager
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- [UserInsights](https://userinsights.com)
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
+- [User10](https://user10.com)
+- [Soumettre.fr](https://soumettre.fr/)
+- [CodeBrisk](https://codebrisk.com)
+- [1Forge](https://1forge.com)
+- [TECPRESSO](https://tecpresso.co.jp/)
+- [Runtime Converter](http://runtimeconverter.com/)
+- [WebL'Agence](https://weblagence.com/)
+- [Invoice Ninja](https://www.invoiceninja.com)
+- [iMi digital](https://www.imi-digital.de/)
+- [Earthlink](https://www.earthlink.ro/)
+- [Steadfast Collective](https://steadfastcollective.com/)
+- [We Are The Robots Inc.](https://watr.mx/)
+- [Understand.io](https://www.understand.io/)
+- [Abdel Elrafa](https://abdelelrafa.com)
+- [Hyper Host](https://hyper.host)
+- [Appoly](https://www.appoly.co.uk)
+- [OP.GG](https://op.gg)
+- [云软科技](http://www.yunruan.ltd/)
 
-### Features ###
+## Contributing
 
-* Home page
-* Custom Error Page 404
-* Authentication (registration, login, logout, password reset, mail confirmation, throttle)
-* Users roles : administrator (all access), redactor (create and edit post, upload and use medias in personnal directory), and user (create comment in blog)
-* Blog with comments
-* Search in posts
-* Tags on posts
-* Contact us page
-* Admin dashboard with new messages, users, posts and comments
-* Users admin (roles filter, show, edit, delete, create)
-* Messages admin
-* Posts admin (list with dynamic order, show, edit, delete, create)
-* Medias gestion
-* Localisation
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-### Packages included ###
+## Code of Conduct
 
-* laravelcollective/html
-* bestmomo/filemanager
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-### Tricks ###
+## Security Vulnerabilities
 
-To test application the database is seeding with users :
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-* Administrator : email = admin@la.fr, password = admin
-* Redactor : email = redac@la.fr, password = redac
-* User : email = walker@la.fr, password = walker
-* User : email = slacker@la.fr, password = slacker
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

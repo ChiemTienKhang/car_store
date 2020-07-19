@@ -20,6 +20,16 @@ namespace Prophecy\Doubler\Generator;
 class ClassCodeGenerator
 {
     /**
+     * @var TypeHintReference
+     */
+    private $typeHintReference;
+
+    public function __construct(TypeHintReference $typeHintReference = null)
+    {
+        $this->typeHintReference = $typeHintReference ?: new TypeHintReference();
+    }
+
+    /**
      * Generates PHP code for class node.
      *
      * @param string         $classname
@@ -72,18 +82,10 @@ class ClassCodeGenerator
      */
     private function getReturnType(Node\MethodNode $method)
     {
-        if (version_compare(PHP_VERSION, '7.1', '>=')) {
-            if ($method->hasReturnType()) {
-                return $method->hasNullableReturnType()
-                    ? sprintf(': ?%s', $method->getReturnType())
-                    : sprintf(': %s', $method->getReturnType());
-            }
-        }
-
-        if (version_compare(PHP_VERSION, '7.0', '>=')) {
-            return $method->hasReturnType() && $method->getReturnType() !== 'void'
-                ? sprintf(': %s', $method->getReturnType())
-                : '';
+        if ($method->hasReturnType()) {
+            return $method->hasNullableReturnType()
+                ? sprintf(': ?%s', $method->getReturnType())
+                : sprintf(': %s', $method->getReturnType());
         }
 
         return '';
@@ -91,42 +93,12 @@ class ClassCodeGenerator
 
     private function generateArguments(array $arguments)
     {
-        return array_map(function (Node\ArgumentNode $argument) {
-            $php = '';
-
-            if (version_compare(PHP_VERSION, '7.1', '>=')) {
-                $php .= $argument->isNullable() ? '?' : '';
-            }
+        $typeHintReference = $this->typeHintReference;
+        return array_map(function (Node\ArgumentNode $argument) use ($typeHintReference) {
+            $php = $argument->isNullable() ? '?' : '';
 
             if ($hint = $argument->getTypeHint()) {
-                switch ($hint) {
-                    case 'array':
-                    case 'callable':
-                        $php .= $hint;
-                        break;
-
-                    case 'iterable':
-                        if (version_compare(PHP_VERSION, '7.1', '>=')) {
-                            $php .= $hint;
-                            break;
-                        }
-
-                        $php .= '\\'.$hint;
-                        break;
-
-                    case 'string':
-                    case 'int':
-                    case 'float':
-                    case 'bool':
-                        if (version_compare(PHP_VERSION, '7.0', '>=')) {
-                            $php .= $hint;
-                            break;
-                        }
-                        // Fall-through to default case for PHP 5.x
-
-                    default:
-                        $php .= '\\'.$hint;
-                }
+                $php .= $typeHintReference->isBuiltInParamTypeHint($hint) ? $hint : '\\'.$hint;
             }
 
             $php .= ' '.($argument->isPassedByReference() ? '&' : '');
